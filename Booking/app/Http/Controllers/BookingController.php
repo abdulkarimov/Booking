@@ -3,19 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Building;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller
 {
     public function get()
     {
-        return response()->json(Booking::all());
+        $booking = DB::table('bookings')->paginate(5);
+        return response()->json($booking);
     }
 
     public function getById($id)
     {
-        $city = Booking::findOrFail($id);
-        return response()->json($city);
+        $booking = Booking::findOrFail($id);
+        return response()->json($booking);
     }
 
     public function add(Request $request)

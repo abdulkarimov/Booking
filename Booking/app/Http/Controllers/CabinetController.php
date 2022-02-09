@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Cabinet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CabinetController extends Controller
 {
     public function get()
     {
-        return response()->json(Cabinet::all());
+        $cabinet = DB::table('cabinets')->paginate(5);
+        return response()->json($cabinet);
     }
 
     public function getById($id)
     {
-        $city = Cabinet::findOrFail($id);
-        return response()->json($city);
+        $cabinet = Cabinet::findOrFail($id);
+        return response()->json($cabinet);
     }
 
     public function add(Request $request)

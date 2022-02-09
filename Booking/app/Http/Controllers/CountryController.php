@@ -4,18 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CountryController extends Controller
 {
     public function get()
     {
-        return response()->json(Country::all());
+        $country = DB::table('countries')->paginate(5);
+        return response()->json($country);
+        // http://127.0.0.1:8000/api/country/?page=1
     }
 
     public function getById($id)
     {
-        $city = Country::findOrFail($id);
-        return response()->json($city);
+        $country = Country::findOrFail($id);
+        return response()->json($country);
     }
 
     public function add(Request $request)

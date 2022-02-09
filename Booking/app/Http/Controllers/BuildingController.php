@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Building;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BuildingController extends Controller
 {
     public function get()
     {
-        return response()->json(Building::all());
+        $building = DB::table('buildings')->paginate(5);
+        return response()->json($building);
     }
 
     public function getById($id)
     {
-        $city = Building::findOrFail($id);
-        return response()->json($city);
+        $building = Building::findOrFail($id);
+        return response()->json($building);
     }
 
     public function add(Request $request)
