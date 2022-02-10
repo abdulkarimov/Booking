@@ -12,6 +12,11 @@ class CabinetController extends Controller
         $cabinet = Cabinet::with('building.city.country')->paginate(5);
         return response()->json($cabinet);
     }
+      public function getByCabinetName($cabinetNumber)
+    {
+        $cabinet = Cabinet::where('number_cabinet', $cabinetNumber)->get();
+        return response()->json($cabinet);
+    }
 
     public function getById($id)
     {
