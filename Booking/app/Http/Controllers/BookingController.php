@@ -9,7 +9,9 @@ class BookingController extends Controller
 {
     public function get()
     {
-        return response()->json(Booking::all());
+        $booking = Booking::with('cabinet')->paginate(5);
+        return response()->json($booking);
+        //todo with user
     }
 
     public function getById($id)

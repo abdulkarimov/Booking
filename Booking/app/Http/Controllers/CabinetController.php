@@ -9,7 +9,8 @@ class CabinetController extends Controller
 {
     public function get()
     {
-        return response()->json(Cabinet::all());
+        $cabinet = Cabinet::with('building.city.country')->paginate(5);
+        return response()->json($cabinet);
     }
 
     public function getById($id)

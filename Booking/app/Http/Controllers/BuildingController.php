@@ -9,7 +9,8 @@ class BuildingController extends Controller
 {
     public function get()
     {
-        return response()->json(Building::all());
+        $building = Building::with('city.country')->paginate(5);
+        return response()->json($building);
     }
 
     public function getById($id)
