@@ -13,46 +13,9 @@ class BuildingController extends Controller
         return response()->json($building);
     }
 
-    public function getById($id)
+    protected function getModel()
     {
-        $city = Building::findOrFail($id);
-        return response()->json($city);
+        return app(Building::class);
     }
-
-    public function add(Request $request)
-    {
-        $data = $request->validate([
-            'name' => 'required|string',
-            'address' => 'required|string',
-            'city_id' =>  'required|integer',
-            'lon' => 'required|string',
-            'lat' => 'required|string',
-        ]);
-        $buinding = Building::create($data);
-        $buinding->save();
-        return response()->json($buinding);
-    }
-
-    public function edit(Request $request , $id)
-    {
-        $buinding = Building::findOrFail($id);
-
-        $data = $request->validate([
-            'name' => 'required|string',
-            'address' => 'required|string',
-            'city_id' =>  'required|integer',
-            'lon' => 'required|string',
-            'lat' => 'required|string',
-        ]);
-        $buinding->update($data);
-        return response()->json($buinding);
-    }
-
-    public function delete(Request $request , $id)
-    {
-        Building::findOrFail($id)->delete();
-        return response()->json('Deleted', 200);
-    }
-
 
 }

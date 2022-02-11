@@ -24,13 +24,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/city',[CityController::class, 'get']);
+Route::get('/city',[CityController::class, 'getAll']);
 Route::get('/city/{id}',[CityController::class, 'getById']);
 Route::post('/city',[CityController::class, 'add']);
 Route::put('/city/{id}',[CityController::class, 'edit']);
 Route::delete('/city/{id}',[CityController::class, 'delete']);
 
-Route::get('/country',[CountryController::class, 'get']);
+Route::get('/country',[CountryController::class, 'getAll']);
 Route::get('/country/{id}',[CountryController::class, 'getById']);
 Route::post('/country',[CountryController::class, 'add']);
 Route::put('/country/{id}',[CountryController::class, 'edit']);
