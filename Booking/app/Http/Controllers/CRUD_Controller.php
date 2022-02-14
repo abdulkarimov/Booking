@@ -10,13 +10,12 @@ abstract  class CRUD_Controller  extends Controller
     public function add(Request $request)
     {
         $add = $this->getModel()::create($this->getModel()->getValidate($request));
-        $add->save();
         return response()->json($add);
     }
 
     public function getAll()
     {
-        return response()->json(($this->getModel())::all(),200);
+        return response()->json(($this->getModel())::all());
     }
 
     public function getById($id)
@@ -34,7 +33,7 @@ abstract  class CRUD_Controller  extends Controller
     public function delete($id)
     {
         $this->getModel()::findOrFail($id)->delete();
-        return response()->json('Deleted', 200);
+        return response()->json('Deleted', 204);
     }
 
 }

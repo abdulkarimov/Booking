@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BookingController extends CRUD_Controller
 {
-    public function get()
+    public function getAll()
     {
         $booking = Booking::with('cabinet')->paginate(5);
         return response()->json($booking);

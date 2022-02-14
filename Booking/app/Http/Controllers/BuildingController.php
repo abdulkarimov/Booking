@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class BuildingController extends CRUD_Controller
 {
-    public function get()
+    public function getAll()
     {
         $building = Building::with('city.country')->paginate(5);
         return response()->json($building);
