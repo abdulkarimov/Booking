@@ -18,8 +18,8 @@ class City extends Model
     public function getValidate(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string',
-            'country_id' => 'required|integer'
+            'name' => 'sometimes|required|string',
+            'country_id' => 'sometimes|required|integer'
         ]);
         return $data;
     }

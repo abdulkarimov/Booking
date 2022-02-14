@@ -14,7 +14,7 @@ class Country extends Model
     public function getValidate(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string'
+            'name' => 'sometimes|required|string'
         ]);
 
         return $data;

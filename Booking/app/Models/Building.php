@@ -17,11 +17,11 @@ class Building extends Model
     public function getValidate(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string',
-            'address' => 'required|string',
-            'lon' => 'required|string',
-            'lat' => 'required|string',
-            'city_id' =>  'required|integer',
+            'name' => 'sometimes|required|string',
+            'address' => 'sometimes|required|string',
+            'lon' => 'sometimes|required|string',
+            'lat' => 'sometimes|required|string',
+            'city_id' =>  'sometimes|required|integer',
         ]);
         return $data;
     }

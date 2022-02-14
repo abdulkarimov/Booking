@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Building;
 use Illuminate\Http\Request;
 
-class BuildingController extends Controller
+class BuildingController extends CRUD_Controller
 {
     public function get()
     {

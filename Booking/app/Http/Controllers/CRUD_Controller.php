@@ -19,6 +19,11 @@ abstract  class CRUD_Controller  extends Controller
         return response()->json(($this->getModel())::all(),200);
     }
 
+    public function getById($id)
+    {
+        return response()->json($this->getModel()::findOrFail($id));
+    }
+
     public function edit(Request $request , $id)
     {
         $edit = $this->getModel()::findOrFail($id);

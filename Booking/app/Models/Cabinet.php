@@ -16,10 +16,10 @@ class Cabinet extends Model
     public function getValidate(Request $request)
     {
         $data = $request->validate([
-            'number_cabinet' => 'required|string',
-            'description' => 'required|string',
-            'status' => 'required|boolean',
-            'building_id' => 'required|integer',
+            'number_cabinet' => 'sometimes|required|string',
+            'description' => 'sometimes|required|string',
+            'status' => 'sometimes|required|boolean',
+            'building_id' => 'sometimes|required|integer',
         ]);
         return $data;
     }

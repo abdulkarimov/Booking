@@ -1,27 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Cabinet;
-use Illuminate\Http\Request;
 
-class CabinetController extends Controller
+
+class CabinetController extends CRUD_Controller
 {
-    public function get()
+    public function getByCity($city)
     {
-        $cabinet = Cabinet::with('building.city.country')->paginate(5);
-        return response()->json($cabinet);
-    }
-      public function getByCabinetName($cabinetNumber)
-    {
-        $cabinet = Cabinet::where('number_cabinet', $cabinetNumber)->get();
-        return response()->json($cabinet);
+        $cabinet = Cabinet::with('building.city.country')->get();
+        $count = $cabinet->getIterator()->count();
+        $cabinetWithCity = [];
+        for( $i = 0; $i < $count; $i++ )
+            if ( $cabinet[$i]['building']['city']['name'] == $city)
+                $cabinetWithCity[] = $cabinet[$i];
+        return response()->json($cabinetWithCity);
     }
 
     protected function getModel()
     {
         return app(Cabinet::class);
     }
-
-
 }
