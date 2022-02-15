@@ -13,6 +13,12 @@ class City extends Model
     public function country(){
         return  $this->belongsTo(Country::class);
     }
+
+    public function buildings()
+    {
+            return $this->hasMany(Building::class);
+    }
+
     protected $fillable = ['name' , 'country_id'];
 
     public function getValidate(Request $request)

@@ -14,6 +14,11 @@ class Building extends Model
     public function city(){
         return  $this->belongsTo(City::class );
     }
+
+    public function cabinets(){
+        return  $this->hasMany(Cabinet::class );
+    }
+
     public function getValidate(Request $request)
     {
         $data = $request->validate([
@@ -25,5 +30,8 @@ class Building extends Model
         ]);
         return $data;
     }
+
+
+
 
 }

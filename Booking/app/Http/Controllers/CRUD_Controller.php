@@ -13,7 +13,7 @@ abstract  class CRUD_Controller  extends Controller
         return response()->json($add);
     }
 
-    public function getAll()
+    public function getAll(Request $request)
     {
         return response()->json(($this->getModel())::all());
     }

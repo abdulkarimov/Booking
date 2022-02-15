@@ -35,8 +35,6 @@ Route::group(['prefix' => '/country'], function () {
 
 Route::group(['prefix' => '/cabinet'], function () {
     Route::get('/', [CabinetController::class, 'getAll']);
-    Route::get('/{id}', [CabinetController::class, 'getById']);
-    Route::get('/{name}', [CabinetController::class, 'getByCity']);
     Route::post('/', [CabinetController::class, 'add']);
     Route::put('/{id}', [CabinetController::class, 'edit']);
     Route::delete('/{id}', [CabinetController::class, 'delete']);
