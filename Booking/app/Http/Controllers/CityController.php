@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\DB;
 
 class CityController extends CRUD_Controller
 {
-    public function getAll()
+
+    public function getAll(Request $request)
     {
         $city = City::with('country')->paginate(5);
         return response()->json($city);

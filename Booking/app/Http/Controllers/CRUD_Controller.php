@@ -10,7 +10,7 @@ abstract  class CRUD_Controller  extends Controller
     public function add(Request $request)
     {
         $add = $this->getModel()::create($this->getModel()->getValidate($request));
-        return response()->json($add);
+        return response()->json($add , 201);
     }
 
     public function getAll(Request $request)
