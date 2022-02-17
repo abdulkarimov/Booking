@@ -27,12 +27,12 @@ class CabinetController extends CRUD_Controller
 //
 //    }
 
-//    public function getAll(Request $request)
-//    {
-//        $validate  = (new \App\Models\Cabinet)->getValidate($request);
-//        //todo фильтрация по данным из $validator'a
-//         return response()->json($validate);
-//    }
+    public function getAll(Request $request)
+    {
+        $validate  = (new Cabinet)->getValidate($request);
+        //todo фильтрация по данным из $validator'a
+         return response()->json($validate);
+    }
 
     protected function getModel()
     {

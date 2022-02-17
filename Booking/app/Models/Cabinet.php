@@ -22,8 +22,8 @@ class Cabinet extends Model
             'description' => 'sometimes|required|string',
             'status' => 'sometimes|required|boolean',
             'building_id' => 'sometimes|required|integer',
-            'city' => 'sometimes|required|string',
-            'country' => 'sometimes|required|string',
+            'city_name' => 'sometimes|required|string',
+            'country_name' => 'sometimes|required|string',
             'id' => 'sometimes|required|integer',
         ]);
         return $data;

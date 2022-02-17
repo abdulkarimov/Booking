@@ -25,6 +25,7 @@ class City extends Model
     {
         $data = $request->validate([
             'name' => 'sometimes|required|string',
+            'country_name' => 'sometimes|required|string',
             'country_id' => 'sometimes|required|integer'
         ]);
         return $data;
