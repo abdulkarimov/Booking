@@ -9,14 +9,22 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
+
     protected $fillable = ['name'];
+
+    protected $hidden = ['created_at','updated_at'];
 
     public function getValidate(Request $request)
     {
         $data = $request->validate([
-            'name' => 'sometimes|required|string'
+            'name' => 'required|string'
         ]);
-
         return $data;
     }
+
+    public function getByArgms($a, $b)
+    {
+        return $this::where($a, '=', $b)->get();
+    }
+
 }
