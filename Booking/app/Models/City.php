@@ -28,7 +28,7 @@ class City extends Model
         return $data;
     }
 
-    public function getByArgms($a, $b)
+    public function getByArgms($key, $value)
     {
         $data = DB::table('cities')
             ->join('countries', 'cities.country_id', '=', 'countries.id')
