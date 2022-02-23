@@ -10,12 +10,6 @@ class ExampleTest extends TestCase
 
 
 
-    public function test_CountryController()
-    {
-        $a = (new \App\Http\Controllers\CountryController())->getAll(\request());
-        $this->assertIsNotFloat($a);
-    }
-
 
 
 }
