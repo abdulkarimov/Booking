@@ -14,17 +14,18 @@ class Country extends Model
 
     protected $hidden = ['created_at','updated_at'];
 
-    public function getValidate(Request $request)
+    public function getPostValidate(Request $request)
     {
         $data = $request->validate([
             'name' => 'required|string'
         ]);
         return $data;
     }
-
-    public function getByArgms($a, $b)
+    public function getValidate(Request $request)
     {
-        return $this::where($a, '=', $b)->get();
+        $data = $request->validate([
+            'name' => 'sometimes|required|string'
+        ]);
+        return $data;
     }
-
 }

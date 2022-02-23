@@ -7,11 +7,8 @@ use Illuminate\Http\Request;
 
 class BuildingController extends CRUD_Controller
 {
-
-
     protected function getModel()
     {
         return app(Building::class);
     }
-
 }

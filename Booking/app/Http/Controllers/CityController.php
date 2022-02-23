@@ -9,10 +9,8 @@ use Illuminate\Support\Facades\DB;
 
 class CityController extends CRUD_Controller
 {
-
     protected function getModel()
     {
         return app(City::class);
     }
-
 }

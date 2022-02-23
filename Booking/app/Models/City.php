@@ -19,7 +19,7 @@ class City extends Model
 
     protected $hidden = ['created_at','updated_at'];
 
-    public function getValidate(Request $request)
+    public function getPostValidate(Request $request)
     {
         $data = $request->validate([
             'name' => 'required|string',
@@ -27,14 +27,12 @@ class City extends Model
         ]);
         return $data;
     }
-
-    public function getByArgms($key, $value)
+    public function getValidate(Request $request)
     {
-        $data = DB::table('cities')
-            ->join('countries', 'cities.country_id', '=', 'countries.id')
-            ->select('cities.*', 'countries')
-            ->where($a, '=', $b)->get();
+        $data = $request->validate([
+            'name' => 'sometimes|required|string',
+            'country_id' => 'sometimes|required|integer'
+        ]);
         return $data;
     }
-
 }

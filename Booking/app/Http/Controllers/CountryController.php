@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class CountryController extends CRUD_Controller
 {
-
     protected function getModel()
     {
         return app(Country::class);

@@ -15,10 +15,12 @@ class Cabinet extends Model
     protected $hidden = ['created_at','updated_at'];
 
     public function building(){
-        return  $this->belongsTo(Building::class);
+        return  $this->belongsTo(Building::class  );
     }
 
-    public function getValidate(Request $request)
+
+
+    public function getPostValidate(Request $request)
     {
         $data = $request->validate([
             'number_cabinet' => 'required|string',
@@ -29,14 +31,14 @@ class Cabinet extends Model
         return $data;
     }
 
-    public function getByArgms($a, $b)
+    public function getValidate(Request $request)
     {
-        $data = DB::table('cabinets')
-            ->join('buildings', 'cabinets.building_id', '=', 'buildings.id')
-            ->join('cities', 'buildings.city_id', '=', 'cities.id')
-            ->join('countries', 'cities.country_id', '=', 'countries.id')
-            ->where($a, '=', $b)
-            ->select('cabinets.*', 'buildings','cities' , 'countries')->get();
+        $data = $request->validate([
+            'number_cabinet' => 'sometimes|required|string',
+            'description' => 'sometimes|required|string',
+            'status' => 'sometimes|required|boolean',
+            'building_id' => 'sometimes|required|integer'
+        ]);
         return $data;
     }
 
