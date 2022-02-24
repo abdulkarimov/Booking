@@ -32,6 +32,7 @@ class A_CountryTest extends TestCase
         $response = $this->get('http://127.0.0.1:8000/api/country/');
         $response->assertStatus(200);
     }
+
     public function test_get404()
     {
         $response = $this->get('http://127.0.0.1:8000/api/countries/' );
@@ -43,6 +44,14 @@ class A_CountryTest extends TestCase
             'name' => '789456'
         ]);
         $response->assertStatus(200);
+    }
+
+    public function test_putFalse()
+    {
+        $response = $this->putJson('http://127.0.0.1:8000/api/country/404'.self::$country_id ,[
+            'name' => '789456'
+        ]);
+        $response->assertStatus(404);
     }
 
     public function test_put422()

@@ -36,6 +36,13 @@ class C_BuildingTest extends TestCase
         ]);
         $response->assertStatus(200);
     }
+    public function test_putFalse()
+    {
+        $response = $this->putJson('http://127.0.0.1:8000/api/building/2222'.self::$building_id ,[
+            'name' => '2452238'
+        ]);
+        $response->assertStatus(404);
+    }
 
     public function test_post422()
     {

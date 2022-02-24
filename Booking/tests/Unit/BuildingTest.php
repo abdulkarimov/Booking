@@ -16,12 +16,12 @@ class BuildingTest extends TestCase
 
         $colum  = Building::all()->first();
         $this->assertArrayHasKey("name", $colum->toArray());
+        $this->assertFalse(array_key_exists("names" , $colum->toArray()));
     }
 
     public function test_ColumOfBuildingFalse()
     {
         $colum  = Building::all()->first();
-        $this->assertFalse(array_key_exists("names" , $colum->toArray()));
     }
 
     public function test_columBuildingIdFalse()
