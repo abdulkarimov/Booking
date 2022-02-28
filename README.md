@@ -8,7 +8,7 @@
 ```json
 {
      "user_id" : "{integer}",
-    "cabinet_id" :"{integer}",
+     "cabinet_id" : "{integer}",
      "time_start" : "Y-m-d H:i",
      "time_end" : "Y-m-d H:i",
 }
@@ -18,10 +18,10 @@
 если добавить даные как :
 ```json
 {
-   	    'number_cabinet' : string,
-            'description' : string,
-            'status' : boolean,
-            'building_id' : 'integer
+   	    "number_cabinet" : "string",
+            "description" : "string",
+            "status" : "boolean",
+            "building_id" : "{integer}"
 }
 ```
 то создаться кабинет 
@@ -31,23 +31,22 @@ building_id получается от ссылки localhost/api/building с п�
 заполненый как :
 ```json
 {
-            'name' : string,
-            'address' : string,
-            'lon' : string,
-            'lat' : string,
-            'city_id' :  integer,
+            "name" : "string",
+            "address" : "string",
+            "lon" : "string",
+            "lat" : "string",
+            "city_id" : "{integer}",
 }
 ```
 создаст  здание в БД
-
 
 city_id получаем с localhost/api/city 
 
 создаем 
 ```json
 {
-            'name' : string,
-            'country_id' :  integer,
+             "name" : "string",
+            'country_id' : "{integer}"
 }
 ```
 coutnry_id получаем с localhost/api/country 
@@ -55,7 +54,7 @@ coutnry_id получаем с localhost/api/country
 создаем 
 ```json
 {
-            'name' : string,
+   "name" : "string",
 }
 ```
 
@@ -68,7 +67,7 @@ B crud_controllerе прописана CRUD логика микросервис�
 к примеру 
 если мы ищем кабинет в определенном городе то просто пишем relation(отношения) с кабинета до города 
 {
-	building.city.country.name : almaty 
+	"building.city.country.name" : "almaty"
 }
 
 
