@@ -43,6 +43,7 @@ building_id получается от ссылки localhost/api/building с п�
 
 
 city_id получаем с localhost/api/city 
+
 создаем 
 ```json
 {
@@ -51,6 +52,7 @@ city_id получаем с localhost/api/city
 }
 ```
 coutnry_id получаем с localhost/api/country 
+
 создаем 
 ```json
 {
