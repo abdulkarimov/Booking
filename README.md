@@ -8,10 +8,10 @@
 ```json
 {
 
-            'user_id' : integer,
-            'cabinet_id' : integer,
-            'time_start' : Y-m-d H:,
-            'time_end' : Y-m-d H:i,
+     'user_id' : integer,
+     'cabinet_id' : integer,
+     'time_start' : Y-m-d H:,
+     'time_end' : Y-m-d H:i,
 }
 ```
 кабинет айди можно получить если не отправить в тело запроса поиска localhost/api/cabinet ( выведится все кабинеты )
