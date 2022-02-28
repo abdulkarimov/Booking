@@ -27,7 +27,8 @@
 ```
 то создаться кабинет 
 
-building_id получается от ссылки localhost/api/building с пустым телом запроса 
+building_id получается от ссылки localhost/api/building с пустым телом запроса.
+
 заполненый как :
 ```json
 {
