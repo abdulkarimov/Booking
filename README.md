@@ -19,7 +19,7 @@
 если добавить даные как :
 ```json
 {
-   	        'number_cabinet' => string,
+   	     'number_cabinet': string,
             'description' => string,
             'status' => boolean,
             'building_id' => 'integer
