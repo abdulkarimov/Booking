@@ -8,10 +8,10 @@
 ```json
 {
 
-            'user_id' => integer,
-            'cabinet_id' => integer,
-            'time_start' =>  Y-m-d H:,
-            'time_end' => Y-m-d H:i,
+            'user_id' : integer,
+            'cabinet_id' : integer,
+            'time_start' : Y-m-d H:,
+            'time_end' : Y-m-d H:i,
 }
 ```
 кабинет айди можно получить если не отправить в тело запроса поиска localhost/api/cabinet ( выведится все кабинеты )
@@ -19,23 +19,23 @@
 если добавить даные как :
 ```json
 {
-   	     'number_cabinet': string,
-            'description' => string,
-            'status' => boolean,
-            'building_id' => 'integer
+   	    'number_cabinet' : string,
+            'description' : string,
+            'status' : boolean,
+            'building_id' : 'integer
 }
 ```
 то создаться кабинет 
 
 building_id получается от ссылки localhost/api/building с пустым телом запроса 
-```json
 заполненый как :
+```json
 {
-            'name' => string,
-            'address' => string,
-            'lon' => string,
-            'lat' => string,
-            'city_id' =>  integer,
+            'name' : string,
+            'address' : string,
+            'lon' : string,
+            'lat' : string,
+            'city_id' :  integer,
 }
 ```
 создаст  здание в БД
@@ -45,15 +45,15 @@ city_id получаем с localhost/api/city
 создаем 
 ```json
 {
-            'name' => string,
-            'country_id' =>  integer,
+            'name' : string,
+            'country_id' :  integer,
 }
 ```
 coutnry_id получаем с localhost/api/country 
 создаем 
 ```json
 {
-            'name' => string,
+            'name' : string,
 }
 ```
 
@@ -75,8 +75,3 @@ put ждет в себе айди и данные с тела по которы�
 delete просто ждет id модели которую нужно удалить 
 
 
-
-
-
-
- 
