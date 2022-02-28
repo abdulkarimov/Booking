@@ -7,7 +7,6 @@
 что бы забронировать кабинет нужны данные как :
 ```json
 {
-
      'user_id' : integer,
      'cabinet_id' : integer,
      'time_start' : Y-m-d H:,
