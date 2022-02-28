@@ -13,7 +13,7 @@
      "time_end" : "Y-m-d H:i",
 }
 ```
-** cabinet_id ** можно получить если не отправить в тело запроса [localhost/api/cabinet](http://localhost:8000/api/cabinet) ( выведится все кабинеты )
+** cabinet_id (bold)** можно получить если не отправить в тело запроса [localhost/api/cabinet](http://localhost:8000/api/cabinet) ( выведится все кабинеты )
 
 если добавить даные как :
 ```json
