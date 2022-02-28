@@ -46,7 +46,7 @@ city_id получаем с localhost/api/city
 ```json
 {
              "name" : "string",
-            'country_id' : "{integer}"
+            "country_id" : "{integer}"
 }
 ```
 coutnry_id получаем с localhost/api/country 
