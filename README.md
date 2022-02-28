@@ -1,7 +1,7 @@
 # Booking
 					# MICRO_SERVICE_BOOKING 
 ~~Зачеркнутый текст~~    
-**Жирный текст (bold)**
+
 микросервис был создан для бранирования кабинетов на определенный срок 
 
 что бы забронировать кабинет нужны данные как :
@@ -13,7 +13,7 @@
      "time_end" : "Y-m-d H:i",
 }
 ```
-** cabinet_id (bold)** можно получить если не отправить в тело запроса [localhost/api/cabinet](http://localhost:8000/api/cabinet) ( выведится все кабинеты )
+**cabinet_id** можно получить если не отправить в тело запроса [localhost/api/cabinet](http://localhost:8000/api/cabinet) ( выведится все кабинеты )
 
 если добавить даные как :
 ```json
@@ -26,7 +26,7 @@
 ```
 то создаться кабинет 
 
-building_id получается от ссылки  [localhost/api/building](http://localhost/api/building) с пустым телом запроса.
+**building_id** получается от ссылки  [localhost/api/building](http://localhost/api/building) с пустым телом запроса.
 
 заполненый как :
 ```json
@@ -40,7 +40,7 @@ building_id получается от ссылки  [localhost/api/building](htt
 ```
 создаст  здание в БД
 
-city_id получаем с  [localhost/api/city](http://localhost/api/city)  
+**city_id** получаем с  [localhost/api/city](http://localhost/api/city)  
 
 создаем 
 ```json
@@ -49,7 +49,7 @@ city_id получаем с  [localhost/api/city](http://localhost/api/city)
             "country_id" : "{integer}"
 }
 ```
-coutnry_id получаем с  [ localhost/api/country](http://localhost/api/country)  
+**coutnry_id** получаем с  [ localhost/api/country](http://localhost/api/country)  
 
 создаем 
 ```json
