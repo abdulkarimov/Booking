@@ -1,47 +1,66 @@
-					MICRO_SERVICE_BOOKING 
+					# MICRO_SERVICE_BOOKING 
+                    
+                    
+микросервис был создан для бранирования кабинетов на определенный срок 
 
-тело запроса country  должнeн содержать поле name в типe string 
-
-а то что касается модели city то его тело долдно содержать 2 поля одно из которых name типа стринг а второе country_id типа int 
-
-также в сервисе имеется модель building который при создание ждет данные как 
-
-{
-            'name' => 'sometimes|required|string',
-            'address' => 'sometimes|required|string',
-            'lon' => 'sometimes|required|string',
-            'lat' => 'sometimes|required|string',
-            'city_id' =>  'sometimes|required|integer',
-}
-
-ко всему прочему были добавлены модели как :
-
-cabinet и booking
-
-где cabinet ждет данные как 
-{
-   	    'number_cabinet' => 'required|string',
-            'description' => 'required|string',
-            'status' => 'required|boolean',
-            'building_id' => 'required|integer'
-}
-
-a booking : 
-
+что бы забронировать кабинет нужны данные как :
+```json
 {
 
-            'user_id' => 'sometimes|required|integer',
-            'cabinet_id' => 'sometimes|required|integer',
-            'time_start' =>  'sometimes|required|date_format:Y-m-d H:i',
-            'time_end' => 'sometimes|required|date_format:Y-m-d H:i',
+            'user_id' => integer,
+            'cabinet_id' => integer,
+            'time_start' =>  Y-m-d H:,
+            'time_end' => Y-m-d H:i,
 }
+```
+кабинет айди можно получить если не отправить в тело запроса поиска localhost/api/cabinet ( выведится все кабинеты )
+
+если добавить даные как :
+```json
+{
+   	        'number_cabinet' => string,
+            'description' => string,
+            'status' => boolean,
+            'building_id' => 'integer
+}
+```
+то создаться кабинет 
+
+building_id получается от ссылки localhost/api/building с пустым телом запроса 
+```json
+заполненый как :
+{
+            'name' => string,
+            'address' => string,
+            'lon' => string,
+            'lat' => string,
+            'city_id' =>  integer,
+}
+```
+создаст  здание в БД
 
 
-crud_controllerе прописана CRUD логика микросервиса 
+city_id получаем с localhost/api/city 
+создаем 
+```json
+{
+            'name' => string,
+            'country_id' =>  integer,
+}
+```
+coutnry_id получаем с localhost/api/country 
+создаем 
+```json
+{
+            'name' => string,
+}
+```
+
+B crud_controllerе прописана CRUD логика микросервиса 
 
 
 для получение всех данных с моделей ,тело запроса get должен быть пустым,  ведь иначе запаботает фильтрация(поиск).
- фильтрация ждет с тела запроса данные по чему будет фильтравать 
+фильтрация ждет с тела запроса данные по чему будет фильтравать 
 
 к примеру 
 если мы ищем кабинет в определенном городе то просто пишем relation(отношения) с кабинета до города 
@@ -54,7 +73,6 @@ put ждет в себе айди и данные с тела по которым будет искать и изменять данные
 
 delete просто ждет id модели которую нужно удалить 
 
-на счет post я описал в начале примеры добовление модели в бд
 
 
 
