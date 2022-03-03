@@ -35,6 +35,13 @@ class D_CabinetTest extends TestCase
         ]);
         $response->assertStatus(200);
     }
+    public function test_putFalse()
+    {
+        $response = $this->putJson('http://127.0.0.1:8000/api/cabinet/2222'.self::$cabinet_id ,[
+            'number_cabinet' => '2452238'
+        ]);
+        $response->assertStatus(404);
+    }
     public function test_post422()
     {
         $response = $this->postJson('http://127.0.0.1:8000/api/cabinet', [
