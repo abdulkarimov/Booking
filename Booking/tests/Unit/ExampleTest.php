@@ -1,15 +1,15 @@
 <?php
 
 namespace Tests\Unit;
-use Illuminate\Http\Request;
-use App\Models\Country;
-use Tests\TestCase;
+
+use PHPUnit\Framework\TestCase;
+
 
 class ExampleTest extends TestCase
 {
 
-
-
-
-
+    public function test_example()
+    {
+        $this->assertTrue(true);
+    }
 }
