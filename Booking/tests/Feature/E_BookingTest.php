@@ -38,14 +38,6 @@ class E_BookingTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_putFalse()
-    {
-        $response = $this->putJson('http://127.0.0.1:8000/api/booking/22222222222'.self::$booking_id ,[
-            'time_start' => '2022-03-16 22:43'
-        ]);
-        $response->assertStatus(404);
-    }
-
     public function test_post422()
     {
         $response = $this->postJson('http://127.0.0.1:8000/api/booking', [
