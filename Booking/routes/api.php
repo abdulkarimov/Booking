@@ -18,7 +18,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => '/city'], function () {
     Route::get('/', [CityController::class, 'getAll']);
-    Route::get('/{id}', [CityController::class, 'getById']);
     Route::post('/', [CityController::class, 'add']);
     Route::put('/{id}', [CityController::class, 'edit']);
     Route::delete('/{id}', [CityController::class, 'delete']);
@@ -26,7 +25,6 @@ Route::group(['prefix' => '/city'], function () {
 
 Route::group(['prefix' => '/country'], function () {
     Route::get('/', [CountryController::class, 'getAll']);
-    Route::get('/{id}', [CountryController::class, 'getById']);
     Route::post('/', [CountryController::class, 'add']);
     Route::put('/{id}', [CountryController::class, 'edit']);
     Route::delete('/{id}', [CountryController::class, 'delete']);
@@ -42,7 +40,6 @@ Route::group(['prefix' => '/cabinet'], function () {
 
 Route::group(['prefix' => '/booking'], function () {
     Route::get('/', [BookingController::class, 'getAll']);
-    Route::get('/{id}', [BookingController::class, 'getById']);
     Route::post('/', [BookingController::class, 'add']);
     Route::put('/{id}', [BookingController::class, 'edit']);
     Route::delete('/{id}', [BookingController::class, 'delete']);
@@ -50,7 +47,6 @@ Route::group(['prefix' => '/booking'], function () {
 
 Route::group(['prefix' => '/building'], function () {
     Route::get('/', [BuildingController::class, 'getAll']);
-    Route::get('/{id}', [BuildingController::class, 'getById']);
     Route::post('/', [BuildingController::class, 'add']);
     Route::put('/{id}', [BuildingController::class, 'edit']);
     Route::delete('/{id}', [BuildingController::class, 'delete']);
