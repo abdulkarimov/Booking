@@ -12,6 +12,7 @@ class Handler extends ExceptionHandler
      *
      * @var array<int, class-string<Throwable>>
      */
+
     protected $dontReport = [
         //
     ];
@@ -32,10 +33,14 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
-    public function register()
+
+    public function report(Throwable $ex)
     {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+        // dd($ex->getCode());    
+      if ($ex->getStatusCode() == 404)
+      {
+        return response("страница не найдена");
+        die();
+      }
     }
 }

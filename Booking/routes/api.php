@@ -24,6 +24,14 @@ Route::group(['prefix' => '/city'], function () {
     Route::delete('/{id}', [CityController::class, 'delete']);
 });
 
+Route::group(['prefix' => '/cabinet'], function () {
+    Route::get('/', [CabinetController::class, 'getAll']);
+    Route::get('/{id}', [CabinetController::class, 'getById']);
+    Route::post('/', [CabinetController::class, 'add']);
+    Route::put('/{id}', [CabinetController::class, 'edit']);
+    Route::delete('/{id}', [CabinetController::class, 'delete']);
+});
+
 Route::group(['prefix' => '/country'], function () {
     Route::get('/', [CountryController::class, 'getAll']);
     Route::get('/{id}', [CountryController::class, 'getById']);
@@ -34,6 +42,7 @@ Route::group(['prefix' => '/country'], function () {
 
 Route::group(['prefix' => '/booking'], function () {
     Route::get('/', [BookingController::class, 'getAll']);
+    Route::get('/test', [BookingController::class, 'getInUseCabinet']);
     Route::get('/{id}', [BookingController::class, 'getById']);
     Route::post('/', [BookingController::class, 'add']);
     Route::put('/{id}', [BookingController::class, 'edit']);
