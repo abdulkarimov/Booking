@@ -42,7 +42,7 @@ Route::group(['prefix' => '/country'], function () {
 
 Route::group(['prefix' => '/booking'], function () {
     Route::get('/', [BookingController::class, 'getAll']);
-    Route::get('/test', [BookingController::class, 'getInUseCabinet']);
+    Route::post('/test', [BookingController::class, 'getInUseCabinet']);
     Route::get('/{id}', [BookingController::class, 'getById']);
     Route::post('/', [BookingController::class, 'add']);
     Route::put('/{id}', [BookingController::class, 'edit']);
