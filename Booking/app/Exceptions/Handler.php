@@ -37,10 +37,10 @@ class Handler extends ExceptionHandler
     public function report(Throwable $ex)
     {
         // dd($ex->getCode());    
-      if ($ex->getStatusCode() == 404)
-      {
-        return response("страница не найдена");
-        die();
-      }
+      // if ($ex->getStatusCode() == 404)
+      // {
+      //   return response("страница не найдена");
+      //   die();
+      // }
     }
 }
